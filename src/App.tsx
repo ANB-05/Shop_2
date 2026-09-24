@@ -7,6 +7,7 @@ import Cart from "./pages/cart/Cart"
 import { useShoppingCartContext } from "./context/ShoppingCartContext"
 import PrivateRoute from "./components/privateRoute/PrivateRoute"
 import Login from "./pages/login/Login"
+import About from "./pages/about/About"
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}/>
           <Route path="/store" element={<Store />}/>
+          <Route path="/about" element={<About />}/>
           <Route path="/product/:id" element={<Product />} />
           <Route path="/login" element={isLogin ? <Navigate to='/' /> : <Login /> } />
           <Route element={<PrivateRoute />}>

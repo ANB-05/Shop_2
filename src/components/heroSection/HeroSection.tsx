@@ -11,7 +11,7 @@ function HeroSection() {
                     خریدی ساده، سریع و مطمئن
                 </h1>
 
-                <p className="mt-4 text-lg leading-8 text-gray-600">
+                <p className="mt-4 p-3 text-lg leading-8 text-gray-600">
                     هر چیزی که نیاز داری، در یکجا پیدا کن.
                     محصولات موردنظرت را با بهترین قیمت انتخاب کن
                     و تجربه‌ای متفاوت از خرید آنلاین داشته باش.
