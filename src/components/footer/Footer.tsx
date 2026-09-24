@@ -12,13 +12,13 @@ const Footer = () => {
               MyWebsite
             </h2>
 
-            <p className="mt-4 max-w-xs text-sm leading-6 text-black">
+            <p className="mt-4 text-sm leading-6 text-black">
               We build modern and simple digital experiences
               that help businesses grow.
             </p>
 
             {/* Social Media */}
-            <div className="mt-6 flex gap-4 text-white">
+            <div className="flex justify-center mt-2 sm:items-start gap-4 text-white">
               <a
                 href="#"
                 className="rounded-full bg-gray-800 px-3 py-2 text-sm transition hover:bg-gray-700 hover:text-white"
