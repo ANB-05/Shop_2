@@ -57,15 +57,6 @@ function Navbar() {
                                 تماس با ما
                             </Link>
                         </li>
-
-                        <li>
-                            <Link
-                                to="/communication"
-                                className="rounded-lg px-3 py-2 transition hover:bg-green-500 hover:text-white"
-                            >
-                                ارتباط با ما
-                            </Link>
-                        </li>
                     </ul>
 
                     {/* Actions */}
