@@ -1,12 +1,13 @@
 
 import type { Iblogs } from "../../types/services";
+import RatingStar from "../ratingStar/RatingStar";
 
 type blogItem = Iblogs
 
 function BlogItems({price,description,images,category,title,rating}:blogItem) {
     
     return (  
-        <div className='w-100 h-155 shadow-blue-500  border border-teal-300 rounded'>
+        <div className='w-100 h-158 shadow-blue-500  border border-teal-300 rounded'>
             <img src={images[0]} className='w-full h-100'/>
             <div className='w-full'>
                 <h3 className='text-center' style={{color:levelPrice(price)}}>{price}</h3>
@@ -17,6 +18,7 @@ function BlogItems({price,description,images,category,title,rating}:blogItem) {
                 <div className="col-span-1 flex justify-center">{category}</div>
                 <div className="col-span-1 flex justify-center">{rating}</div>
             </div>
+            <div className="flex justify-center"><RatingStar rating={rating} /></div>
         </div>
     );
 

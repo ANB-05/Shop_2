@@ -3,6 +3,8 @@ import Container from "../../components/container/Container";
 import { useEffect, useState } from "react";
 import type { Iblog } from "../../types/services";
 import { getBlog } from "../../services/api";
+import RatingStar from "../../components/ratingStar/RatingStar";
+
 
 
 function BlogPage() {
@@ -19,15 +21,15 @@ function BlogPage() {
         })
     },[])
 
-    // console.log(price)
+    console.log()
 
     return (  
         <Container>
-            <div className="flex flex-col my-5 items-center">
+            <div className="flex flex-col p-5 my-20 items-center">
                 <img src={Binfo?.image} width='200px'/>
+                <div className="my-3"><RatingStar rating={Binfo?.rating?.rate} /></div>
                 <div>{Binfo?.title}</div>
                 <p className="my-5">{Binfo?.description}</p>
-                {/* <p>{Binfo.}</p> */}
             </div>
         </Container>
     );
