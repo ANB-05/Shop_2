@@ -43,4 +43,10 @@ export async function getBlogs() {
     return data.products;
 }
 
+export async function getBlog(id : string | number){
+    const { data } = await client(`/products/${id}`)
+
+    return data  
+}
+
 

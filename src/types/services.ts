@@ -66,5 +66,19 @@ interface Meta {
 
 
 
+export interface Iblog {
+  id: number
+  title: string
+  price: number
+  description: string
+  category: string
+  image: string
+  rating: BRating
+}
+
+interface BRating {
+  rate: number
+  count: number
+}
 
 
