@@ -33,3 +33,14 @@ export async function login(username: string , password: string) {
 }
 
 
+
+
+
+
+export async function getBlogs() {
+    const { data } = await axios.get("https://dummyjson.com/products");
+
+    return data.products;
+}
+
+
