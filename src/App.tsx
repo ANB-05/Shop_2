@@ -9,6 +9,10 @@ import PrivateRoute from "./components/privateRoute/PrivateRoute"
 import Login from "./pages/login/Login"
 import About from "./pages/about/About"
 import ContactUs from "./pages/contactUs/ContactUs"
+import Blogs from "./pages/blogs/Blogs"
+import BlogPage from "./pages/blogPage/BlogPage"
+import Favorites from "./pages/favorites/Favorites"
+
 
 
 function App() {
@@ -22,6 +26,9 @@ function App() {
           <Route path="/store" element={<Store />}/>
           <Route path="/about" element={<About />}/>
           <Route path="/contact" element={<ContactUs />}/>
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/blogs" element={<Blogs />}/>
+          <Route path="/blog/:id" element={<BlogPage />} />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/login" element={isLogin ? <Navigate to='/' /> : <Login /> } />
           <Route element={<PrivateRoute />}>

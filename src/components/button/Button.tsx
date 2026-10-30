@@ -26,7 +26,7 @@ function checkbtn(variant?:Tvariant|null){
     }else if(variant === "success"){
         return {backgroundColor:"green",color:"white"}
     }else if(variant === "warning"){
-        return {backgroundColor:"yellow",color:"black"}
+        return {backgroundColor:"yellow",color:"black",}
     }else if(variant === "danger"){
         return {backgroundColor:"red",color:"white"}
     }

@@ -10,10 +10,16 @@ const RatingStar = ({ rating }: RatingProps) => {
   return (
     <div className="flex items-center gap-1">
       {[1, 2, 3, 4, 5].map((star) => (
-        <FaStar key={star} className={star <= stars ? "text-yellow-400" : "text-gray-300"}/>
+        <FaStar key={star} className={star <= stars ? starcolor(stars) : "text-gray-300"}/>
       ))}
     </div>
   );
 };
+
+function starcolor(Scount:number){
+  if(Scount == 1) return "text-yellow-900"
+  if(Scount > 1 && Scount <= 3) return "text-yellow-700"
+  if(Scount >= 4) return "text-yellow-400"
+}
 
 export default RatingStar;

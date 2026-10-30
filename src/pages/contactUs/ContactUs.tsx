@@ -7,29 +7,20 @@ function ContactUs() {
 
                 <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
 
-                    {/* SVG */}
-                    <div className="flex justify-center max-[699px]:hidden">
-                        <img
-                            src={ContactImage}
-                            alt="ارتباط با ما"
-                            className="w-full max-w-md"
-                        />
-                    </div>
-
                     {/* Form */}
-                    <div className="text-right">
+                    <div className="text-left">
                         <span className="font-semibold text-green-600">
-                            ارتباط با ما
+                            Contact Us
                         </span>
 
                         <h1 className="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">
-                            با ما در ارتباط باشید
+                            Get in Touch with Us
                         </h1>
 
                         <p className="mt-4 leading-8 text-gray-600">
-                            اگر سوال، پیشنهاد یا انتقادی دارید، از طریق فرم زیر
-                            با ما در ارتباط باشید. پیام شما در سریع‌ترین زمان
-                            ممکن بررسی خواهد شد.
+                            If you have any questions, suggestions, or feedback,
+                            please reach out to us using the form below.
+                            Your message will be reviewed as soon as possible.
                         </p>
 
                         <form className="mt-8 space-y-5">
@@ -40,14 +31,15 @@ function ContactUs() {
                                     htmlFor="name"
                                     className="mb-2 block font-medium text-gray-700"
                                 >
-                                    نام و نام خانوادگی
+                                    Name
                                 </label>
 
                                 <input
                                     id="name"
+                                    name="name"
                                     type="text"
-                                    placeholder="نام خود را وارد کنید"
-                                    className="w-full text-right rounded-xl border border-gray-300 px-4 py-3 outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-100"
+                                    placeholder="Enter your name"
+                                    className="w-full rounded-xl border border-gray-300 px-4 py-3 text-left outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-100"
                                 />
                             </div>
 
@@ -57,63 +49,63 @@ function ContactUs() {
                                     htmlFor="email"
                                     className="mb-2 block font-medium text-gray-700"
                                 >
-                                    ایمیل
+                                    Email
                                 </label>
 
                                 <input
                                     id="email"
+                                    name="email"
                                     type="email"
                                     placeholder="example@email.com"
-                                    className="w-full text-right rounded-xl border border-gray-300 px-4 py-3 outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-100"
+                                    className="w-full rounded-xl border border-gray-300 px-4 py-3 text-left outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-100"
                                 />
                             </div>
 
                             {/* Subject */}
-                            
-
                             <div>
                                 <label
                                     htmlFor="subject"
                                     className="mb-2 block font-medium text-gray-700"
                                 >
-                                    موضوع
+                                    Subject
                                 </label>
 
                                 <select
                                     id="subject"
+                                    name="subject"
                                     defaultValue=""
-                                    className="w-full text-right rounded-xl border border-gray-300 bg-white px-4 py-3 text-gray-700 outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-100"
+                                    className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-left text-gray-700 outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-100"
                                 >
                                     <option value="" disabled>
-                                        موضوع مورد نظر را انتخاب کنید
+                                        Select a subject
                                     </option>
 
                                     <option value="order">
-                                        مشکل در سفارش
+                                        Order Issue
                                     </option>
 
                                     <option value="tracking">
-                                        پیگیری سفارش
+                                        Order Tracking
                                     </option>
 
                                     <option value="payment">
-                                        مشکل پرداخت
+                                        Payment Issue
                                     </option>
 
                                     <option value="return">
-                                        درخواست مرجوعی
+                                        Return Request
                                     </option>
 
                                     <option value="suggestion">
-                                        پیشنهاد
+                                        Suggestion
                                     </option>
 
                                     <option value="complaint">
-                                        انتقاد
+                                        Complaint
                                     </option>
 
                                     <option value="other">
-                                        سایر موارد
+                                        Other
                                     </option>
                                 </select>
                             </div>
@@ -124,14 +116,15 @@ function ContactUs() {
                                     htmlFor="message"
                                     className="mb-2 block font-medium text-gray-700"
                                 >
-                                    پیام
+                                    Message
                                 </label>
 
                                 <textarea
                                     id="message"
+                                    name="message"
                                     rows={5}
-                                    placeholder="پیام خود را بنویسید..."
-                                    className="w-full text-right resize-none rounded-xl border border-gray-300 px-4 py-3 outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-100"
+                                    placeholder="Write your message here..."
+                                    className="w-full resize-none rounded-xl border border-gray-300 px-4 py-3 text-left outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-100"
                                 />
                             </div>
 
@@ -140,10 +133,19 @@ function ContactUs() {
                                 type="submit"
                                 className="w-full rounded-xl bg-green-500 px-6 py-3 font-semibold text-white transition hover:bg-green-600"
                             >
-                                ارسال پیام
+                                Send Message
                             </button>
 
                         </form>
+                    </div>
+
+                    {/* Image */}
+                    <div className="hidden justify-center lg:flex">
+                        <img
+                            src={ContactImage}
+                            alt="Contact Us"
+                            className="w-full max-w-md"
+                        />
                     </div>
 
                 </div>
@@ -153,4 +155,3 @@ function ContactUs() {
 }
 
 export default ContactUs;
-

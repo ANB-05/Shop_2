@@ -22,6 +22,10 @@ interface IshoppingCartContext {
     handleLogout : ()=> void,
     cartQty : number
     isLogin : boolean
+
+    favorites: number[];
+    toggleFavorite: (id: number) => void;
+    isFavorite: (id: number) => boolean;
 }
 
 export const ShoppingCartContext = createContext({} as IshoppingCartContext)
@@ -33,6 +37,8 @@ export const useShoppingCartContext = ()=>{
 export function ShoppingCartProvider({children}: IshoppingCartProvider){
 
     const [cartItem,setCartItem] = useLocalStorage<IcartItem[]>("cartItems",[])
+
+    const [favorites, setFavorites] = useLocalStorage<number[]>("favorites",[]);
 
     const handleIncreaseProductQty = (id : number)=>{
         setCartItem((currentItem) => {
@@ -101,6 +107,24 @@ export function ShoppingCartProvider({children}: IshoppingCartProvider){
         localStorage.removeItem('token')
     }
 
+    const toggleFavorite = (id: number) => {
+
+        setFavorites(currentFavorites => {
+
+            const exists = currentFavorites.includes(id);
+
+            if (exists) {
+                return currentFavorites.filter(itemId => itemId !== id);
+            }
+                return [...currentFavorites, id];
+            });
+
+    };
+
+    const isFavorite = (id: number): boolean => {
+        return favorites.includes(id);
+    };
+
     useEffect(()=>{
         let token = localStorage.getItem('token')
 
@@ -119,7 +143,10 @@ export function ShoppingCartProvider({children}: IshoppingCartProvider){
             handleLogin,
             cartQty ,
             isLogin ,
-            handleLogout
+            handleLogout,
+            favorites,
+            toggleFavorite,
+            isFavorite
             }}>
             {children}
         </ShoppingCartContext.Provider>

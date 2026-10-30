@@ -4,6 +4,7 @@ import ProductItem from "../../components/product_item/Productitem";
 import { useEffect, useState } from "react";
 import { getProducts } from "../../services/api";
 import type { Iproducts } from "../../types/services";
+import Grid from "../../components/grid/grid";
 
 
 function Store() {
@@ -18,21 +19,14 @@ function Store() {
 
     return (  
         <Container>
-            <div>
-                <div className="text-center py-3 my-1 rounded bg-amber-100">
-                    <h1>جدیدترین محصولات</h1>
-                </div>
-
-                <div className="grid grid-cols-3 gap-5 my-10 ">
-                    {product.map(p => {
-                        return(
-                            <Link key={p.id} to={`/product/${p.id}`}>
-                                <ProductItem {...p} />
-                            </Link>
-                        )
-                    })}
-                </div>
+            <div className="text-center py-3 my-3 rounded bg-amber-100">
+                <h1>جدیدترین محصولات</h1>
             </div>
+            <Grid>
+                {product.map(p => (
+                    <ProductItem key={p.id} {...p} />
+                ))}
+            </Grid>
         </Container>
     );
 }
